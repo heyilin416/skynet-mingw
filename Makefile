@@ -1,5 +1,5 @@
-LUA_CLIB_PATH ?= luaclib
-CSERVICE_PATH ?= cservice
+LUA_CLIB_PATH ?= luaclib-win
+CSERVICE_PATH ?= cservice-win
 SKYNET_DEFINES :=-DNOUSE_JEMALLOC -DFD_SETSIZE=4096
 
 CC = gcc -std=gnu99
@@ -14,7 +14,7 @@ LUA_INC ?= 3rd/lua
 
 PLATFORM_INC ?= platform
 
-CFLAGS := -g -O2 -Wall -I$(PLATFORM_INC) -I$(LUA_INC) $(MYCFLAGS)
+CFLAGS := -g -O2 -Wall -I$(PLATFORM_INC) -I$(LUA_INC) $(MYCFLAGS) -D_WINDOWS
 # CFLAGS += -DUSE_PTHREAD_LOCK
 
 # link
